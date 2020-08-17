@@ -66,13 +66,3 @@ func TestReverse(t *testing.T) {
 	l.Reverse()
 	l.Print()
 }
-
-func TestLru(t *testing.T) {
-	l := NewLru(5)
-	l.add(0)
-	l.add(1)
-	l.add(2)
-	l.add(3)
-	l.add(4)
-	l.Print()
-}
