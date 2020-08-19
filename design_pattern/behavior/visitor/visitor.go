@@ -5,12 +5,29 @@ import (
 )
 
 type Action interface {
+	// 性别只有男女，是比较稳定的，对于不同的反应，只需要分别实现男女的反应即可
 	GetManConclusion(p *Man)
 	GetWomanConclusion(p *Woman)
 }
 
 type Person interface {
 	Accept(visitor Action)
+}
+
+type Man struct {
+	name string
+}
+
+func (m *Man) Accept(visitor Action) {
+	visitor.GetManConclusion(m)
+}
+
+type Woman struct {
+	name string
+}
+
+func (w *Woman) Accept(visitor Action) {
+	visitor.GetWomanConclusion(w)
 }
 
 type Success struct {
@@ -37,22 +54,7 @@ func (s *Failing) GetWomanConclusion(p *Woman) {
 	fmt.Printf("%s%s的时候，眼泪汪汪，谁也劝不了。\n", p.name, s.name)
 }
 
-type Man struct {
-	name string
-}
-
-func (m *Man) Accept(visitor Action) {
-	visitor.GetManConclusion(m)
-}
-
-type Woman struct {
-	name string
-}
-
-func (w *Woman) Accept(visitor Action) {
-	visitor.GetWomanConclusion(w)
-}
-
+// 对象构造类
 type ObjectStructure struct {
 	persons []Person
 }
