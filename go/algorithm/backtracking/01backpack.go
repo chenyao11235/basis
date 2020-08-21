@@ -10,7 +10,6 @@ package backtracking
 
 const MAX_WEIGHT = 100
 
-// i
 func cal(i, cw int, items []int, n, w int) {
 	if i == n || cw >= w {
 		if cw > MAX_WEIGHT {
