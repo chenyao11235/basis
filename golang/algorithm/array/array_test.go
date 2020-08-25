@@ -36,7 +36,7 @@ func TestArray(t *testing.T) {
 func TestPivotIndex(t *testing.T) {
 	arr := []int{1, 7, 3, 6, 5, 6}
 	assert.Equal(t, 3, pivotIndex(arr), "index should be 3")
-	arr = []int{1, 7, 3, 6}
+	arr = []int{1, 8, 3, 6}
 	assert.Equal(t, -1, pivotIndex(arr), "index should be 3")
 }
 
@@ -51,4 +51,14 @@ func TestMerge(t *testing.T) {
 	arr := [][]int{{1, 3}, {2, 6}, {8, 10}, {15, 18}}
 	marr := merge(arr)
 	t.Log(marr)
+}
+
+func TestTwoSum(t *testing.T) {
+	r := twoSum([]int{2, 7, 11, 15}, 9)
+	t.Log(r)
+}
+
+func TestThreeSum(t *testing.T) {
+	result := threeSum([]int{-1, 0, 1, 2, -1, -4})
+	t.Log(result)
 }

@@ -1,0 +1,6 @@
+.vscode/
+.venv/
+.json
+.xml
+go.mod
+go.sum
